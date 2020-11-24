@@ -1,7 +1,3 @@
 aaa
 bbb @@@@@@@@
-<<<<<<< HEAD
-dddd
-=======
-ccccc:
->>>>>>> 604916b (edited by hot_fix)
+i am clone!
