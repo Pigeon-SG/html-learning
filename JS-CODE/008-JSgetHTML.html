@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>get node refs to id</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			function getid(){
+				// get node object
+				var mydivid = document.getElementById("mydiv");
+				console.log(mydivid);
+			}
+			function getContent(){
+				var content = document.getElementById("mydiv2");
+				console.log(content.innerHTML);
+			}
+			function setContent(){
+				var content = document.getElementById("mydiv3");
+				/* innerHTML会被当作html代码来处理
+				   innerTEXT会被当作纯文本来处理
+				*/
+				content.innerHTML = "<font color = red>not null!</font>";
+			}
+			function getusername(){
+				var userelement = document.getElementById("username");
+				var name = userelement.value;
+				console.log(name);
+			}
+			function resetname(){
+				var userelement = document.getElementById("username");
+				userelement.value = "shang";
+			}
+		</script>
+		<div id="mydiv">
+			
+		</div>
+		<input type="button" name="" id="" value="get node id" onclick="getid()" />
+		<div id="mydiv2">
+			hello~
+		</div>
+		<input type="button" name="" id="" value="get content" onclick="getContent()" />
+		<div id="mydiv3">
+			
+		</div>
+		<input type="button" name="" id="" value="design content" onclick="setContent()" />
+		
+		username：<input type="text" name="" id="username" value="" />
+		<input type="button" name="" id="" value="getusername" onclick="getusername()" />
+		<input type="button" name="" id="" value="reset" onclick="resetname()" />
+	</body>
+</html>

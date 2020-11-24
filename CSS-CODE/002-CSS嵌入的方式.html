@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>CSS嵌入HTML的方式</title>
+		<!-- style标签里面写样式块 -->
+		<style type="text/css">
+			/* CSS ANOTATION */
+			/* 设置id = div2 元素的宽度高度的背景色 */
+			/* id 选择器 # + id name */
+			#div2{
+				width:200px;
+				height: 300px;
+				background-color: aqua;
+			}
+			#text1{
+				border-color: #FFE4C4;
+				border-style: solid;
+			}
+			/* 标签选择器 作用于当前页面的所有标签 */
+			input{
+				border-color: bisque;
+				border-style: dashed;
+				border-width: 0.125rem;
+			}
+			/* 类选择器 */
+			.s{
+				width: 6.25rem;
+				height: 6.25rem;
+				background-color: #FFE4C4;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="div1" style="width:200px;height:200px; background-color:#00ff00;">
+		</div>
+		<div id="div2">
+			<input type="text" name="" id="" value="" /><br>
+			<input type="text" id = "text1" />
+		</div>
+		
+		<br><br>
+		<input type="text" class="s" name="" id="" value="" /><br>
+		<input type="text" class="s" name="" id="" value="" /><br>
+		<div id="" class = "s">
+			3
+		</div>
+	</body>
+</html>

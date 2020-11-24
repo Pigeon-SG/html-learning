@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单验证</title>
+	</head>
+	<body>
+		<!-- 
+		 用户名不能为空（失去焦点验证）-->
+		 <script type="text/javascript">
+		 	function checkName(username){
+				username = username.trim();
+				var nameError = document.getElementById("nameError");
+				if(username == ""){					
+					nameError.innerHTML = "not null!";
+				}else{
+					// not null
+					if(username.length < 6||username.length > 14){
+						nameError.innerHTML = "illegal![6-14]";
+					}else{
+						// legal
+						// regular expression
+						var regexp = /^[0-9a-zA-Z]+$/;
+						var ok = regexp.test(username);
+						if(ok){
+							
+						}else{
+							nameError.innerHTML = "illegal!just nums and characters!";
+						}
+					}
+				}
+			}
+			function checkclear(){
+				var nameError = document.getElementById("nameError");
+				nameError.innerHTML = "";
+			}
+		 </script>
+		 <style type="text/css">
+		 	#nameError{
+				color: red;
+				font-size: 0.75rem;
+			}
+		 </style>
+		<form action="http://localhost:8080/oa/save" method="get">
+			用户名：<input type="text" name="username" onblur="checkName(this.value)" onfocus="checkclear()"/>
+			<span id="nameError">
+			</span><br>
+			<input type="submit" value="save"/>
+		</form>
+	</body>
+</html>
