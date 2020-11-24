@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>常用的CSS样式</title>
+		<style type="text/css">
+			.cities{
+				display: block;
+			}
+			#nameError{
+				font-size: 1.875rem;
+				color: red;
+			}
+			.chaolianjie{
+				text-decoration: none;
+			}
+			/* :hover 设置鼠标悬停样式的 */
+			#bjpowrnode:hover{
+				color: #FF0000;
+				cursor: pointer;
+			}
+			.mydiv{
+				width: 100px;
+				height: 100px;
+				background-color: #444;
+				border: 1px red solid;
+				/* 外补丁 */
+				margin-top: 200px;
+				margin-left: 400px;
+				/* 内补丁 其实就是把元素往外扩*/
+				padding-right: 100px;
+			}
+			#outterdiv{
+				width: 300px;
+				height: 300px;
+				background-color: red;
+				float: right;
+			}
+			#innerdiv{
+				width:100px;
+				height:100px;
+				background-color: #00FFFF;
+				float: right;
+			}
+			#littletrick:hover{
+				
+			}
+		</style>
+	</head>
+	<body>
+		<!-- 无序列表 -->
+		<span id="bjpowrnode">
+			donglijiedian-koukouxiangchuandeJavahuangfujunxiao
+		</span>
+		<input type="button" name="" id="littletrick" value="你能点到我吗" />
+		<ul>
+			<li>China</li>
+				<ul class="cities">
+					<li>beijing</li>
+					<li>zhejiang</li>
+					<li>shanghai</li>
+				</ul>
+			<li>America</li>
+				<ul class="cities">
+					<li>huashengudn</li>
+					<li>zhijiage</li>
+					<li>luoshanji</li>
+				</ul>
+			<li>Japan</li>
+		</ul>
+		<span id="nameError">
+			用户名不能为空
+		</span><br><br><br>
+		<!-- 文本装饰 -->
+		<a href="http://www.baidu.com" class="chaolianjie">baidu</a>
+		<br><br><br><br>
+		<!-- 内补丁，外补丁 -->
+		<div id="" class="mydiv">
+			111
+		</div>
+		<!-- 浮动效果 -->
+		<div id="outterdiv">
+			<div id="innerdiv">
+				
+			</div>
+		</div>
+	</body>
+</html>

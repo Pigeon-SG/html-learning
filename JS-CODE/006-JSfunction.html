@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>JSFunction</title>
+	</head>
+	<body>
+		<script type="text/javascript">
+			/* function func_name(a,b,c){} */
+			/* JS函数的参数列表不需要声明变量类型，也不需要说明返回值类型*/
+			/* 函数的声明是 */
+			function hello(){
+				window.alert("hello world!");
+			}
+			function sum(a,b){
+				console.log(a+b);
+			}
+			function welcome(name){
+				console.log("welcome " + name);
+			}
+		</script>
+		<input type="button" value="单击一下" onclick="hello()" />
+		<input type="button" value="单击一下" onclick="welcome('shanggaun')" />
+	</body>
+</html>

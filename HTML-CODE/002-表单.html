@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>表单-002</title>
+		<!-- 搜集用户的信息，并且提交给服务器 -->
+	</head>
+	<body>
+		<!-- 向服务器发送请求
+		 1.浏览器输入url
+		 2.超链接					1/2 都是属于get请求
+		 3.填写表单，提交
+		 -->
+		 <!-- 
+		 form标签的属性
+		 action属性指定请求路径 ， 和 href 差不多
+		 method属性指定表单提交的方式 get（显示在浏览器的地址栏上） / post
+			url 和 超链接 都是get方式
+		 -->
+		 <a href="http://www.baidu.com" target="_blank">baidu.com</a>
+		 
+		 <form action="http://wwww.baidu.com" method="post" target="_blank">
+		 	<!-- submit 具有提交表单的能力 button 没有这个能力-->
+			<!-- input 要放在表单内部才有提交的能力 -->
+			<!-- 对于文本框来说，用户填写的就是value -->
+			<table border =1 cellspacing="1" cellpadding="1">
+				<!-- cellspacing 每个单元格之间的距离
+					 cellpadding 每个单元格边框和内容之间的距离-->
+				<tr>
+					<!-- 表头单元格 -->
+					<th>User login</th>
+				</tr>
+				<tr>
+					<td align="right">yonghuaming:</td>
+					<td><input type="text" name="username"/></td>
+				</tr>
+				<tr>
+					<td align="right">mima:</td>
+					<td><input type="password" name="password"/></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><input type="submit" value="提交数据"/><input type="reset" value="重置" /></td>
+				</tr>
+			</table>	
+		 </form>
+		 <hr>
+	</body>
+</html>

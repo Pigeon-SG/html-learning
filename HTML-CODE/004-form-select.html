@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>form-select</title>
+	</head>
+	<body>
+		shengfen:
+		<select name="province">
+			<option value="">请选择省份</option>
+			<option value ="1">beijing</option>
+			<option value ="2">shanghai</option>
+			<option value ="3">zhejiang</option>
+			<option value ="4">guangdong</option>
+			<option value ="5">shandong</option>
+			<option value ="6">guangxi</option>
+		</select>
+		<!-- file 控件 -->
+		<input type="file" />
+		<!-- hidden 隐藏域控件 -->
+		<hr >
+		<form action="http://localhost:8080/oa/save" method="get">
+			<!-- 希望用户代码是隐藏的，但是提交的表单一定要提交 -->
+			yonghujihou:<input type="text" name="usercode"/><br>
+			用户代码（隐藏的）:<input type="hidden" name="usercode_hidden" value="11111" /><br>
+			jigoudaima:<input type="text" name="orgcode"/><br>
+			<input type="submit" value="baocun"/>
+		</form>
+		<hr >
+		<!-- disabled readonly -->
+		<!-- 二者都不会被修改，但是disabled不能提交，readonly是可以被提交的 -->
+		<form action="http://localhost:8080/oa/save" method="get">
+			用户账户号：<input type="text" name="usercode3" value="1234" readonly />
+			用户账户号：<input type="text" name="usercode4" value="1234" disabled />
+			<input type="submit" value="保存"/>
+		</form>
+		<hr >
+		<!-- 输入的最大长度 -->
+		<input type="text" maxlength = 3 />
+	</body>
+</html>
