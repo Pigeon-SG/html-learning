@@ -1,0 +1,55 @@
+<!doctype>
+<html>
+	<head><title>表单的学习</title></head>
+	
+	<body bgcolor = "black">
+		<!--也可以设置初始值 value = “？？？”-->
+		<input type = "text" placeholder = "请输入" size = 100>
+		<br>
+		<br>
+		<input type = "password" size = 80>
+		
+		<br>
+		<br>
+		<p>今天晚上做什么？</p>
+		<!--同一个name里面的内容就是同一个分组
+			在这个分组里面，只能选中一个单选框
+		-->
+		
+		<!--
+			对于不同的输入类型，value属性的用法也不同：
+				type = “botton” “reset” “submit” -- 定义为按钮上显示的文本
+				type = “text”，“password”，“hidden” -- 定义为输入字段的初始值
+				type = “checkedbox”，“radio”，“image” -- 定义为与输入相关联的值
+		
+		-->
+		<font color = "blue">学习java</font><input type="radio" name="activity" value="学习java" > <br/>
+		<font color = "blue">东京热</font><input type="radio" name="activity" value="tokyohot" > <br/>
+		<font color = "blue">dota</font><input type="radio" name="activity" value="dota" > <br/>
+		<font color = "blue">LOL</font><input type="radio" name="activity" checked = "checked" value="lol"> <br/>
+		<br>
+		<font color = "blue">学习java</font><input type="checkbox" name="activity" value="学习java" > <br/>
+		<font color = "blue">东京热</font><input type="checkbox" name="activity" value="tokyohot" > <br/>
+		<font color = "blue">dota</font><input type="checkbox" name="activity" value="dota" > <br/>
+		<font color = "blue">LOL</font><input type="checkbox" name="activity" checked = "checked" value="lol"> <br/>
+		<br/>
+		<!--下拉列表
+			size 列表显示多少个选项
+			multiple = num -- 可以选择多个选项
+			selected = "selected" 默认选择
+		-->
+		<select size = 2;style = width:60px name = "how to play?">
+			<option value = study><font color = "red">学习java</font></option>
+			<option value = movie><font color = "red">东京热</font></option>
+			<option value = dota><font color = "red">dota</font></option>
+			<option value = lol><font color = "red">LOL</font></option>
+		</select>
+		
+		<!--文本域
+			所以文本域内的标签是没有用的咯？
+		-->
+		<textarea><p>123</p>abcdefghijkl
+		</textarea>
+		
+	</body>
+</html>
