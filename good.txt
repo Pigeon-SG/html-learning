@@ -1,5 +1,0 @@
-git is a free software.
-git is a version control system.
-new line
-4444
-55555
