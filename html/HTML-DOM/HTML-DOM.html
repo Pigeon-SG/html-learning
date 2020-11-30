@@ -1,0 +1,42 @@
+<!-- HOW 2 J DOM树 -->
+<html>
+    <head><title>HTML-DOM tree</title></head>
+    <body>
+        <div id="d1">hello dom tree</div>
+        <div >hello javascript</div>
+        <div >hello BOM</div>
+        <div >hello DOM</div>
+        <!-- 设置一个div的几个属性 -->
+        <div id="d2" align="center" class="abc">hello HTML DOM</div>
+    </body>
+    <script>
+        // 同样的还有 document.getElementsByClassName
+        //           document.getElenmentsByName    document.getElementById
+        var  divs = document.getElementsByTagName("div");
+        for(i=0;i<divs.length;i++){
+            document.write(divs[i]);
+            document.write("<br>");
+        }
+        var div2 = document.getElementById("d2");
+        // 获取 div2 的属性
+        var as = div2.attributes;
+        // 获取 div2 的节点内容 text
+        var contents = div2.childNodes[0];
+        document.write("div2 has " + as.length + " attributes<br>")
+        document.write("分别是:");
+        for(i = 0; i< as.length; i++){
+            document.write("<br>");
+            document.write(as[i].nodeName);
+            document.write(":");
+            document.write(as[i].nodeValue);
+        }
+        document.write("<br>");
+        document.write("div的id属性值是："+ as["id"].nodeValue);
+        document.write("<br>");
+        document.write(contents.nodeName);
+        document.write("<br>");
+        document.write(contents.nodeValue);
+        
+
+    </script>
+</html>

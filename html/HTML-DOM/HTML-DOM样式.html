@@ -1,0 +1,29 @@
+<html>
+    <head><title>HTML-DOM-STYLE</title></head>
+    <body>
+        <button onclick="hide()">hide the div</button>
+        <button onclick="show()">show the div</button>
+        <button onclick="changecolorbydocument()">change div color by doc</button>
+        <button onclick="changecolorbycss()">change div color by css</button>
+        <div id="div_showandhide">i am a div_showandhide</div>
+        <div id="div_changecolor">i am a div_changecolor</div>
+    </body>
+    <script>
+        function hide(){
+            var div1 = document.getElementById("div_showandhide");
+            div1.style.display = "none";            
+        }
+        function show(){
+            var div = document.getElementById("div_showandhide");
+            div.style.display = "block";
+        }
+        function changecolorbydocument(){
+            var div = document.getElementById("div_changecolor");
+            div.style.backgroundColor = "green";
+        }
+        function changecolorbycss(){
+            var div = document.getElementById("div_changecolor");
+            div.style.color = "red";
+        }
+    </script>
+</html>
