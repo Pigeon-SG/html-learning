@@ -13,6 +13,27 @@
 	background-color: #00FFFF;
 	border: 0.125rem;
 	position: absolute;
-	top: 8.125rem;
+	top: 31.25rem;
 	left: 21.875rem;
+}
+.div1{
+	width: 18.75rem;
+	height: 12.5rem;
+	background-color: antiquewhite;
+	border:0.125rem;
+	position: absolute;
+	top: 6.25rem;
+	left: 25rem;
+}
+.div2{
+	width: 100px;
+	height: 200px;
+	background-color: #FF0000;
+	border:0.125rem;
+	position: absolute;
+	top: 100px;
+	left: 10px;
+}
+#div2_input{
+	
 }
