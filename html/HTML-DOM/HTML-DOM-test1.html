@@ -1,0 +1,48 @@
+<!-- 设置斑马线 -->
+<html>
+    <head>
+        <title>斑马线表格</title>
+        <style>
+            td{
+                width:600px    
+            }
+            table{
+            
+            }
+        </style>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>blood</td>
+                <td>damage</td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>blood</td>
+                <td>damage</td>
+            </tr>
+            <tr>
+                <td>id</td>
+                <td>name</td>
+                <td>blood</td>
+                <td>damage</td>
+            </tr>
+
+        </table>
+    </body>
+    <script>
+        var my_table = document.getElementsByTagName("tr")
+        for(var i = 0;i < my_table.length;i++){
+            if(i % 2 == 0){
+                my_table[i].style.backgroundColor = "gray";
+            }else{
+                my_table[i].style.backgroundColor = "white";
+            }
+        }
+    </script>
+
+</html>

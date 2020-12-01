@@ -1,0 +1,128 @@
+<html>
+    <head><title>dom事件</title></head>
+    <body onload="loadbody()">
+        <curseblurandfocus>
+            <input type="text" id="input1" placeholder="input1" onblur="b()" onfocus="f()">
+            <br>
+            <br>
+            <input type="text" id="input2" placeholder="input2">
+            <br><br>
+            <div id="mess">???</div>
+        </curseblurandfocus>       
+        <mouse>
+            <input type="button" onmousedown="down()" onmouseup="up()" value="mouse donw and up">
+            <br><br>
+            <input type="button" onmousemove="move()" value="mouse move"><br><br>
+            <input type="button" onmouseover="over()" value="mouse over"><br><br>
+            <div id="message">???</div>
+        </mouse>
+        <keyboard>
+            <!-- 这里需要提供一个表示事件的参数event 该参数会传入发生事件的有关信息 -->
+            <input type="button" onkeydown="keydown(event)" value = "test keydown"><br><br>
+            <input type="button" onkeydown="keypress(event)" value = "test keypress"><br><br>
+            <input type="button" onkeyup="keyup(event)" value = "test key up"><br><br>
+            <div id = "key_div">???</div>
+        </keyboard>
+        <!-- form action 属性是发送表单的目的地 -->
+        <form action="" onsubmit="login()">
+            <table>
+                <tr>
+                    <td>username:</td>
+                    <td><input type="text" id="username"></td>
+                </tr>
+                <tr>
+                    <td>password:</td>
+                    <td><input type="password" id="password"></td>
+                </tr>
+            </table>
+            <input type="submit" id="submit" value = "submit">
+        </form><br><br>
+        <!-- 输入框变化事件,输入框的onchange只有在失去焦点的时候才会触发 -->
+        <input type="text"  id="onchangetext" onchange="changefuc()"><br><br>
+        <div id="onchange_div">???</div>
+        <!-- body and img load test -->
+        <!-- 如果不能加载图片,就用alt属性的text代替 -->
+        <img src="http://how2j.cn/example.gif" alt="wuxian" onload="loadimg()">
+        <br><br>
+        <div id="loadbody_div" style = "display: none;background-color:#0000ff;">body has loaded</div>
+        <div id="imgload_div"></div><br><br>
+        <!-- this 当前组件 -->
+        <input type="button" value = "show this button1" id = "button1" onclick="oneclick(this)">
+        <input type="button" value = "show this button2" id = "button2" onclick="oneclick(this)"><br><br>
+        <div id = "this_div">
+            ???
+        </div>
+    
+    </body>
+    <script>
+        var enter_num = 0;
+        var pass_num = 0;
+        // b() & f() 是光标的函数
+        function b(){
+            var div_mess = document.getElementById("mess")
+            div_mess.childNodes[0].nodeValue = "change"
+            
+        }
+        function f(){
+            var div_mess = document.getElementById("mess")
+            div_mess.innerHTML = "input1 abtain focous";
+        }
+        // 下面四个是鼠标的函数
+        function down(){
+            var mouse_div = document.getElementById("message");
+            console.log(mouse_div.childNodes)
+            // 为什么找不到mouse_div的child nodes?
+            mouse_div.innerText = "your mouse is down";
+        }
+        function move(){
+            pass_num++
+            var mouse_div = document.getElementById("message");
+            mouse_div.innerText = `your mouse move into the div for ${pass_num} times`;
+        }
+        function up(){
+            var mouse_div = document.getElementById("message");
+            mouse_div.innerText = "your mouse is up"
+        }
+        function over(){
+            var mouse_div = document.getElementById("message");
+            enter_num++;
+            mouse_div.innerText = `your mouse enter the div for ${enter_num} times`;
+        }
+        // 测试键盘的函数
+        function keydown(e){
+            var text = "down the key of " + e.keyCode;
+            document.getElementById("key_div").innerText = text;
+        }   
+        function keypress(e){
+            var test = `press the key of ${e.keyCode}`;
+            document.getElementById("key_div").innerText = test;
+        }
+        function keyup(e){
+            var test = `bounce the key of ${e.keyCode}`;
+            document.getElementById("key_div").innerText = test;
+        }
+        // 表单的提交函数
+        function login(){
+            alert("提交表单");
+        }
+        // onchange函数
+        function changefuc(){
+            var changetext = document.getElementById("onchangetext").value;
+            document.getElementById("onchange_div").innerText = `input text has changed to ${changetext}`;
+        }
+        // load body & img
+        function loadbody(){
+            // 这里修改的style会完全覆盖上面定义的style
+            document.getElementById("loadbody_div").style = "display:block";
+        }
+        function loadimg(){
+            document.getElementById("imgload_div").innerText = "img has loaed!";
+        }
+        // 演示this的函数
+        function oneclick(button){
+            console.log(button.value);
+            document.getElementById("this_div").innerText = `the clicked button was ${button.id}`;
+        }
+        
+    </script>
+</html>
