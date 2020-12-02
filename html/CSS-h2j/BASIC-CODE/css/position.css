@@ -1,0 +1,30 @@
+#p_in_body{
+    position: absolute;
+    left: 200px;
+    top: 100px;
+}
+div.div1,div.div2{
+    width: 400px;
+    height: 400px;
+    background-color: pink;
+}
+
+#image1{
+    position: absolute;
+    top: 600px;
+    left: 0px;
+    z-index: 1;
+}
+#image2{
+    position: absolute;
+    top: 500px;
+    left: 0px;
+    z-index: -1;
+}
+div.div2 p#relativeposition_p{
+    position: relative;
+    left: 200px;
+}
+div.inner_div{
+    position: absolute;
+}

@@ -1,0 +1,37 @@
+div{
+    border: 1px solid red;
+}
+
+.div1{
+    text-align: center;
+}
+.div2{
+    position: relative;
+    height: 300px;
+    width: 90%;
+    background-color:skyblue;
+    margin: auto;
+}
+.div3{
+    position: absolute;
+    bottom: 0;
+    height: 50px;
+    width: 100%;
+    background-color: lightgreen;
+    text-align: center;
+    line-height: 50px;
+}
+.div4{
+    position: relative;
+    top: 125px;
+    width: 100px;
+    margin:auto;
+    text-align: center;
+}
+.div_codebeaty span{
+    border: olive 2px solid;
+    float: left;
+}
+.div_codebeaty{
+    
+}

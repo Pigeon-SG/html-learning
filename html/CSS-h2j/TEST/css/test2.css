@@ -1,0 +1,57 @@
+/* —————————       —————————— */
+/*      界面的全局样式设计     */
+/* —————————       —————————— */
+div{
+    background-color: black;
+}
+input{
+    display: inline-block;
+    border: red 5px solid;
+    background-color: transparent;
+    margin-right:7px;
+}
+/* —————————       —————————— */
+/*         菜单栏的设计        */
+/* —————————       —————————— */
+.menu_div{  
+    width: 300px;
+    height: 700px;
+    float: left;
+
+     /* 字体相关设置 */
+     color: cornsilk;
+     font-family: 黑体;
+}
+/*          第一个div——英雄职业样式         */
+div#hero_info{
+    /* background-color: blue;   */
+    width: 100%;
+    height: 200px;
+
+    /* 设置文本对齐 */
+    text-align: center;
+}
+span.hero_info_everyline{
+    /* 每一行只控制上下的margin */
+    display:inline-block;
+    width: 100%;
+    border: solid 1px red;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+span.hero_info_single{
+    /* 每一个控制左右的margin */
+    /* position: relative; */
+    display:inline-block;
+    margin-left: 1%;
+    margin-right: 10%;
+}
+/* —————————       —————————— */
+/*      英雄图像的设计div      */
+/* —————————       —————————— */
+.heroes_image{
+    width: 800px;
+    height: 700px;
+    float: left;
+    margin-left: 20px;
+}
