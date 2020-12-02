@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>超链状态</title>
+	</head>
+	<body>
+		<a href="none" target="_blank" class = "no_underline">超链的不同状态</a><br><br>
+		<a href="" class = "menu_index" id = "weapons">weapons</a> &nbsp;
+		<a href="" class = "menu_index" id = "armor">armor</a> &nbsp;
+		<a href="" class = "menu_index" id = "heroes" onmouseover="over(this)">heroes</a> 
+		<div class="menu" id = "menu_heroes">
+			<a href="">garen</a>
+			<a href="">teemo</a>
+		</div>
+	</body>
+	<style type="text/css">
+		a:link{color:#00FF00}
+		a:visited {color:#00FF00}
+		a:hover { color: #FF00FF}
+		a:active { color: #0000FF}
+		/* 下面做作业 */
+		a{
+			text-decoration: none;
+		}
+		a.menu_index:link{color: aqua;}
+		a.menu_index:visited{color: aqua;}
+		a.menu_index:hover{color: aqua;}
+		a.menu_index:active{color: aqua;}
+		/* 设置菜单的div样式 */
+		div.menu{
+			display: none;
+			position: absolute;
+			left: 170px;
+			width: 100px;
+			/* border: 1px solid lightgray; */
+		}
+		/* 设置菜单的css样式 */
+		div.menu a{
+			text-align: center;
+			color: #87CEEB;
+			/* display block 这里打开之后才能设置width相对于div的宽度值 */
+			display: block;
+			width: 100%;
+			border: 1px solid #D3D3D3;
+			padding-top: 2px;
+			padding-bottom: 2px;
+		}
+		div.menu a:hover{
+			background-color: lightgray;
+		}
+	</style>
+	<script type="text/javascript">
+		function over(menu_index){
+			document.getElementById("menu_heroes").style.display = "block";
+		}
+	</script>
+</html>
