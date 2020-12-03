@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <title>Array test1</title>
+        <link rel="stylesheet" href="css/array-test1.css">
+    </head>
+    <body>
+        
+    </body>
+    <script>
+        function p(s){
+            document.write(s);
+            document.write("<br>");
+        }
+        function comparator(v1,v2){
+            return v1 - v2;
+        }
+        var x = new Array(3,1,4,1,5,9,2,6);
+        p('数组x是:'+x);
+        x.sort(comparator);
+        p('使用sort 进行自定义倒排序后的数组x是:'+Array.from(new Set(x)));
+    </script>
+</html>

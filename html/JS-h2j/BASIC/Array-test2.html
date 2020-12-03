@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Array test2</title>
+        <link rel="stylesheet" href="css/array-test2.css">
+    </head>
+    <body>
+        <div class="div_line">
+            <span class = "notes">随机输入的英文字符串：</span>
+            <textarea class = "textarea_" id = "input_sen">what a great day</textarea><br>
+        </div>
+        <div class="div_line">
+            <span class = "notes">正序结果：</span>
+            <textarea class = "textarea_" id="result_1"></textarea><br>
+        </div>
+        <div class="div_line">
+            <span class = "notes">倒序结果：</span>
+            <textarea class = "textarea_" id="result_2"></textarea><br>
+        </div>
+        <div class="div_line">
+            <span class = "notes"></span>
+            <input type="button" value = "order by char" onclick="orderbychar()"><br>
+            <input type="button" value = "order by word" onclick="orderbyword()">
+        </div>
+        <script>
+            var str = new String(document.getElementById("input_sen").value);
+            var words = str.split(" ");
+            var char_arr = new Array();
+            for(var i = 0;i<str.length;i++){
+                char_arr.push(str.charAt(i));
+            }
+            char_arr.sort();
+            words.sort();
+            function orderbychar(){
+                var result = char_arr.join("");
+                document.getElementById("result_1").value = result;
+                result = char_arr.reverse().join("");
+                document.getElementById("result_2").value = result;
+            }
+            function orderbyword(){
+                var result = words.join(" ");
+                document.getElementById("result_1").value = result;
+                result = words.reverse().join(" ");
+                document.getElementById("result_2").value = result;
+            }
+        </script>
+    </body>
+</html>

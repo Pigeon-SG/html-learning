@@ -1,0 +1,25 @@
+.replacing_char{
+    width: 100px;
+    height: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+div.line_div{
+    display: table;
+    width: 100%;
+    margin: 2%;
+    border: solid 2px blue;
+}
+div.line_div span.line_span{
+    display: table-cell;
+    width: 30%;
+    vertical-align: middle;
+    text-align: right;
+    border: 1px red solid;
+    /* float: left; */
+}
+div.line_div .in_line_div{
+    display: table;
+    width: 70%;
+    /* border: chartreuse 2px solid; */
+}

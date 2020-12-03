@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>practice2</title>
+        <link rel="stylesheet" href="css/practice2_css.css">
+    </head>
+    <body>
+        <div style="width: 400px;height: 400px;background-color: silver;">
+            <h4 style="text-align: center;">character replace tool</h4>
+            <div class = "line_div">
+                <span class="line_span">string source:</span>
+                <textarea name="" id="input_str" cols="10" rows="5">example</textarea>
+            </div>
+            <div class = "line_div">
+                <span class="line_span">query:</span>
+                <input type="text" id = "replaced_char"value="a">
+            </div>
+            <div class = "line_div">
+                <span class="line_span">replacing:</span>
+                <div class = "in_line_div">
+                    <input type="text" id = "replacing_char"value="oo">
+                </div>
+                
+            </div>
+            <div class = "line_div">
+                <span class="line_span">result:</span>
+                <textarea name="" id="result_text" cols="10" rows="2"></textarea>
+            </div>
+            <div class = "line_div">
+                <span class="line_span"></span>
+                <input type="button" value = "query" onclick="replacechar()">
+            </div>
+            
+        </div>
+    </body>
+    <script>
+        function replacechar(){
+            var original_str = new String(document.getElementById("input_str").innerHTML);
+            var replaced_char = document.getElementById("replaced_char").value;
+            var replacing_char = document.getElementById("replacing_char").value;
+            var result = original_str.replace(replaced_char,replacing_char);
+            document.getElementById("result_text").innerHTML = result;
+            alert(result);
+        }
+    </script>
+</html>
