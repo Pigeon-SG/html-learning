@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>practice 1</title>
+        <link rel="stylesheet" href="css/practice1_css.css">
+    </head>
+    <body>
+        <input class = "input_style" type="text" id="input_add_1" value="2">&nbsp;+
+        <input class = "input_style" type="text" id="input_add_2">&nbsp;=
+        <input class = "input_style" type="text" id="output">&nbsp;
+        <input type="button" value = "calculate" onclick="calculate()">
+    </body>
+
+    <script>
+        function calculate(){
+            var result = 0;
+            var add_1 = parseInt(document.getElementById("input_add_1").value);
+            var add_2 = parseInt(document.getElementById("input_add_2").value)
+
+            result = add_1 + add_2;
+            document.getElementById("output").value = result;
+        }
+    </script>
+
+</html>
