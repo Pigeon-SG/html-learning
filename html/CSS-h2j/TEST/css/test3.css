@@ -1,0 +1,13 @@
+div.ver_mid_div{
+    display: table;
+}
+div.ver_mid_div div{
+    display: table-cell;
+    vertical-align: middle;
+}
+
+div.ver_mid_div span{
+    display: block;
+    width: 100%;
+    text-align: center;
+}
