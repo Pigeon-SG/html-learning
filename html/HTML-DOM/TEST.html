@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>html dom test</title>
+
+    </head>
+    <body>
+        <div>???</div>
+        <div>!!!</div>
+    </body>
+    <script>
+        var tags = document.getElementsByTagName("div");
+        document.write(`tags type:${typeof tags}<br>`);
+
+        document.write(`TagName:${tags[0].tagName}<br>`);
+        document.write(`nodeType:${tags[1].nodeType}<br>`);
+        document.write(`nodeName:${tags[0].nodeName}<br>`);
+        document.write(`innerHTML type:${typeof tags[0].innerHTML}<br>`);
+        document.write(`innerHTML:${tags[0].innerHTML}<br>`);
+        document.write(`innerTEXT type:${typeof tags[0].innerText}<br>`);
+
+        document.write(`innerText:${tags[0].innerText}<br>`);
+
+    </script>
+</html>

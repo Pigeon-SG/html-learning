@@ -1,0 +1,33 @@
+div{
+    display: none;
+    border: 1px solid black;
+    width: 100px;
+    text-align:center;
+}
+div#d_weapons{
+    position: relative;
+    left: 0px;
+}
+div#d_armor{
+    position: relative;
+    left: 50px;
+}
+div#d_heroes{
+    position: relative;
+    left: 100px;
+}
+a {
+    font-size: 14px;
+    color: CornflowerBlue;
+    text-decoration: none;
+    width: 100%;
+}
+div a{
+    display: inline-block;
+    /* border: 1px rebeccapurple solid; */
+}
+div a:hover{
+    /* color: gray; */
+    color: white;
+    background-color: gray;
+}
