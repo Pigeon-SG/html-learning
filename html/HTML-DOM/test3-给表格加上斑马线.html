@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>动态加上元素</title>
+        <link rel="stylesheet" href="css/test3.css">    
+    </head>
+    <body>
+        <table id="table">
+            <tr style="background-color: red;">
+                <td>id</td>
+                <td>name</td>
+                <td>blood volume</td>
+                <td>damage</td>
+            </tr>
+        </table>
+        <input type="button" value="add one line" onclick="addline()">
+    </body>
+    <script>
+        // 定义表格内容的一个全局变量
+        var index = 0;
+        var name_arr = new Array("gareen","teemo","annie");
+        var blood_arr = new Array(340,320,380);
+        var damage_arr = new Array(58,76,38);
+        function addline(){
+            var tab = document.getElementById("table");
+            // 创建新的tr
+            var newtr = document.createElement("tr");
+            // 创建新的td
+            add_td(newtr,name_arr,index);
+            index = index + 1;
+            tab.appendChild(newtr);
+            
+        }
+        function add_td(newtr,arr,index){
+            var newtd_id = document.createElement("td");
+            newtd_id.appendChild(document.createTextNode(index+1));
+            var newtd_name = document.createElement("td");
+            newtd_name.appendChild(document.createTextNode(name_arr[index]));
+            var newtd_blood = document.createElement("td");
+            newtd_blood.appendChild(document.createTextNode(blood_arr[index]));
+            var newtd_damage = document.createElement("td");
+            newtd_damage.appendChild(document.createTextNode(damage_arr[index]));
+            newtr.appendChild(newtd_id);
+            newtr.appendChild(newtd_name);
+            newtr.appendChild(newtd_blood);
+            newtr.appendChild(newtd_damage);
+            // 加上斑马线的元素
+            if(index % 2 == 0){
+                var zebracrossing = document.createAttribute("style");
+                zebracrossing.nodeValue = "background-color:gray;"
+                newtr.setAttributeNode(zebracrossing);
+            }
+        }
+    </script>
+</html>

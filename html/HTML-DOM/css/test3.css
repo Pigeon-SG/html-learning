@@ -1,0 +1,15 @@
+table{
+    width: 600px;
+    border-collapse: collapse;
+}
+table tr{
+    /* width: 100%; */
+    height: 25px;
+}
+table tr td{
+    width: 25%;
+    /* border: 1px red solid; */
+    text-align:center;
+    font-weight: lighter;
+    
+}

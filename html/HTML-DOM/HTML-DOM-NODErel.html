@@ -3,18 +3,22 @@
         <title>relationship between nodes</title>
     </head>
     <body>
+        <!-- 测试父子节点的关系 -->
         <div id="d">
             parent div
             <div id="d1">
                 child div
-                <p id = p>
+                <p id = "p" style = "color: green;">
+                    p node is here
                     <div id="d1_1">
                         grandchild div
                     </div>
+                    nihao
                 </p>
             </div>
         </div>
         <input type="button" value = "showparentnode" onclick="showparentnode()">
+        <br><br><br>
         <!-- 计算节点的数量 -->
         <div id="p_node">
             parent node content
@@ -24,12 +28,21 @@
         <input type="button" value="first node" onclick="show1()">
         <input type="button" value="last node" onclick="show_1()">
         <input type="button" value="node num" onclick="shownodenum()">
+        <br><br><br><hr>
+        <!-- 动态创建节点~ -->
+        <div id="d3_1" style="text-align: center;">
+            hello HTML DOM
+        </div>
+        <div>
+            <input type="button" value = "create a child node" onclick="createchildnode()" style="display: block; margin: auto;">
+        </div>
+        
     </body>
     <script>
         var node = null;
         function showparentnode(){
             if(node == null){
-                node = document.getElementById("d1_1");
+                node = document.getElementById("p");
                 alert(node);
             }else{
                 alert(node.parentNode);
@@ -48,6 +61,15 @@
         function shownodenum(){
             var div = document.getElementById("p_node");
             alert(div.childNodes.length);
+        }
+        // 动态创建节点
+        function createchildnode(){
+            var div = document.getElementById("d3_1");
+            var div_child = document.createElement("div");
+            var text = document.createTextNode("这是dom创建出来的div")
+            div_child.appendChild(text);
+
+            div.appendChild(div_child);
         }
     </script>
 </html>
