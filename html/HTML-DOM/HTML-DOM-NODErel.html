@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <title>relationship between nodes</title>
+    </head>
+    <body>
+        <div id="d">
+            parent div
+            <div id="d1">
+                child div
+                <p id = p>
+                    <div id="d1_1">
+                        grandchild div
+                    </div>
+                </p>
+            </div>
+        </div>
+        <input type="button" value = "showparentnode" onclick="showparentnode()">
+        <!-- 计算节点的数量 -->
+        <div id="p_node">
+            parent node content
+            <div id="c_1">first div</div>
+            <div id="c_2">second div</div>
+            <div id="c_3">third div</div></div>
+        <input type="button" value="first node" onclick="show1()">
+        <input type="button" value="last node" onclick="show_1()">
+        <input type="button" value="node num" onclick="shownodenum()">
+    </body>
+    <script>
+        var node = null;
+        function showparentnode(){
+            if(node == null){
+                node = document.getElementById("d1_1");
+                alert(node);
+            }else{
+                alert(node.parentNode);
+                node = node.parentNode;
+            }
+        }
+        function show1(){
+            var div = document.getElementById("p_node");
+            alert(div.firstChild.nodeName);
+            alert(div.firstChild);
+        }
+        function show_1(){
+            var div = document.getElementById("p_node");
+            alert(div.lastChild.nodeName);
+        }
+        function shownodenum(){
+            var div = document.getElementById("p_node");
+            alert(div.childNodes.length);
+        }
+    </script>
+</html>
