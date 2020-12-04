@@ -4,6 +4,7 @@
         <link rel="stylesheet" href="css/array-test2.css">
     </head>
     <body>
+        <!-- 制作表格一样的display 换一种方式可，table？ -->
         <div class="div_line">
             <span class = "notes">随机输入的英文字符串：</span>
             <textarea class = "textarea_" id = "input_sen">what a great day</textarea><br>
@@ -21,27 +22,46 @@
             <input type="button" value = "order by char" onclick="orderbychar()"><br>
             <input type="button" value = "order by word" onclick="orderbyword()">
         </div>
-        <script>
-            var str = new String(document.getElementById("input_sen").value);
-            var words = str.split(" ");
-            var char_arr = new Array();
-            for(var i = 0;i<str.length;i++){
-                char_arr.push(str.charAt(i));
-            }
-            char_arr.sort();
-            words.sort();
-            function orderbychar(){
-                var result = char_arr.join("");
-                document.getElementById("result_1").value = result;
-                result = char_arr.reverse().join("");
-                document.getElementById("result_2").value = result;
-            }
-            function orderbyword(){
-                var result = words.join(" ");
-                document.getElementById("result_1").value = result;
-                result = words.reverse().join(" ");
-                document.getElementById("result_2").value = result;
-            }
-        </script>
+        <!-- 下面用table实现展现的内容 -->
+        <!-- 用table确实方便 -->
+        <table>
+            <tr>
+                <td>随机输入的英文字符串：&nbsp;</td>
+                <td><textarea name="" id="" class = "textarea_"></textarea></td>
+            </tr>
+            <tr>
+                <td>正序结果：</td>
+                <td><textarea name="" id="" class = "textarea_"></textarea></td>
+            </tr>
+            <tr>
+                <td>倒序结果：</td>
+                <td><textarea name="" id="" class = "textarea_"></textarea></td>
+            </tr>
+        </table>
+        
     </body>
+    <script>
+        var str = new String(document.getElementById("input_sen").value);
+        // 按理说 words 是一个数组
+        var words = str.split(" ");
+        var char_arr = new Array();
+        for(var i = 0;i<str.length;i++){
+            char_arr.push(str.charAt(i));
+        }
+        char_arr.sort();
+        words.sort();
+        var charr_rev = char_arr.reverse();
+        function orderbychar(){
+            var result = char_arr.join("");
+            document.getElementById("result_1").value = result;
+            result = char_arr.reverse().join("");
+            document.getElementById("result_2").value = result;
+        }
+        function orderbyword(){
+            var result = words.join(" ");
+            document.getElementById("result_1").value = result;
+            result = words.reverse().join(" ");
+            document.getElementById("result_2").value = result;
+        }
+    </script>
 </html>
