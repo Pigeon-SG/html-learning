@@ -33,7 +33,13 @@
                 <td>4</td>
                 <td>zed</td>
                 <td>350</td>
-                <td>96</td>
+                <td>90</td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>MF</td>
+                <td>340</td>
+                <td>76</td>
             </tr>
         </table>
     </body>
@@ -53,20 +59,37 @@
                 itemsarr.push(item);
             }
             itemsarr.sort();
+            console.log(itemsarr);
             // 历遍itemsarr 把内容一样的按顺序放进来
             // 这里需要处理一下数值相同的问题，出现了bug
+            // 考虑添加一个变量来记录 item
+            var repeatnum = 0;
             for(var i = 0;i<itemsarr.length;i++){
+                if(i > 0)
+                    var temp = itemsarr[i-1];
+                if(temp == itemsarr[i])
+                    repeatnum++;
+                else
+                    repeatnum = 0;
+                console.log(repeatnum);
+                var repeatinloop = repeatnum;
                 for(var j = 0;j < trs.length ; j++){
                     if(itemsarr[i] == trs[j].children[index].innerHTML){
-                        sorted_arr.push(trs[j]);
-                        break;
+                        // 有重复的就跳过
+                        if(repeatinloop > 0){
+                            repeatinloop--;
+                            continue;   
+                        }else{
+                            sorted_arr.push(trs[j]);
+                            break;    
+                        }
                     }
                 }
             }
+            repeatnum = 0;
             // 删除原来的下面的表
             var tr_lenth = table.children[0].children.length 
             for(var i = tr_lenth - 1;i>0; i--){
-                console.log(i);
                 table.children[0].removeChild(table.children[0].children[i]);
             }
             // 添加元素
