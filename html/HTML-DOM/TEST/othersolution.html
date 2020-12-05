@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<table >
+    <tbody id="tbody">
+    <tr >
+        <td ><a  href="javascript:void(0)"  onclick="sort(0)">id</a></td>
+        <td ><a  href="javascript:void(0)"  onclick="sort(1)">名称</a></td>
+        <td ><a  href="javascript:void(0)"  onclick="sort(2)">血量</a></td>
+        <td ><a  href="javascript:void(0)"  onclick="sort(3)">伤害</a></td>
+    </tr>
+    <tr >
+        <td>1</td>
+        <td>gareen</td>
+        <td>340</td>
+        <td>58</td>
+    </tr>
+    <tr >
+        <td>2</td>
+        <td>teemo</td>
+        <td>320</td>
+        <td>76</td>
+    </tr>
+    <tr >
+        <td>3</td>
+        <td>annie</td>
+        <td>380</td>
+        <td>38</td>
+    </tr>
+    <tr >
+        <td>4</td>
+        <td>deadbrother</td>
+        <td>400</td>
+        <td>90</td>
+    </tr>
+    </tbody>
+</table>
+</body>
+ 
+<script>
+function sort(t) {
+    var a=document.getElementsByTagName("td");
+    var c=document.getElementById("tbody");
+    for(i=4+t;i<16+t;i=i+4){
+        for(j=i+4;j<=16+t;j=j+4){
+            if(a[i].innerHTML<a[j].innerHTML){
+    // 判断结束后，直接把原来的行列进行insertBefore处理。
+                c.insertBefore(a[j].parentNode,a[i].parentNode);
+            }
+        }
+    }
+}
+</script>
+</html>
