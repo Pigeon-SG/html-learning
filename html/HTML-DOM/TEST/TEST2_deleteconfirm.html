@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title></title>
+        <style>
+            table{
+                width: 600px;
+                border-collapse: collapse;
+            }
+            td{
+                width: 50%;
+                border: 1px black solid;
+            }
+        </style>
+    </head>
+    <body>
+        <table id="Table">
+            <tr>
+                <td>hero name</td>
+                <td>implement</td>
+            </tr>
+            <tr>
+                <td>teemo</td>
+                <td><a href="#" onclick="removeitem(this)">delete</a></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        function removeitem(item){
+            // var flag = confirm("确认删除");
+            // if(!flag)
+            //     return;
+            var table = document.getElementById("Table");
+            // 因为是从 a 传进来的节点，所以parent node 就是一个td
+            var td = item.parentNode;
+            console.log(td);
+            var tr = td.parentNode;
+            console.log(tr);
+            var index = tr.rowIndex;
+            table.deleteRow(index);
+            console.log(index);
+        }
+    </script>
+</html>

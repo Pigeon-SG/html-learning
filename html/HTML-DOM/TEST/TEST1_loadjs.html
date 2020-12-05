@@ -1,0 +1,40 @@
+<html>
+    <head id="head1">
+        <title>load css in dynamic</title>
+        <!-- <link rel="stylesheet" href="css/practice1_css.css"> -->
+    </head>
+    <body>
+        <input class = "input_style" type="text" id="input_add_1" value="2">&nbsp;+
+        <input class = "input_style" type="text" id="input_add_2" value="2">&nbsp;=
+        <input class = "input_style" type="text" id="output">&nbsp;
+        <input type="button" value = "calculate" onclick="calculate()"><br>
+        <button onclick="loadcss()">load css in this page</button>
+    </body>
+
+    <script>
+        function calculate(){
+            var result = new Number();
+            var add_1 = new Number(document.getElementById("input_add_1").value);
+            var add_2 = new Number(document.getElementById("input_add_2").value);
+
+            result = add_1 + add_2;
+            document.getElementById("output").value = result.toExponential();
+        }
+
+        function loadcss(){
+            var head = document.getElementsByTagName("head")[0];
+            var link_tag = document.createElement("link");
+            var link_rel = document.createAttribute("rel");
+            link_rel.nodeValue = "stylesheet";
+            link_tag.setAttributeNode(link_rel);
+
+            var link_href = document.createAttribute("href");
+            link_href.nodeValue = "css/practice1_css.css";
+            link_tag.setAttributeNode(link_href);
+            head.appendChild(link_tag);
+
+            // window.location.reload();
+        }
+    </script>
+
+</html>

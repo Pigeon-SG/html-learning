@@ -46,6 +46,8 @@
             // 加上斑马线的元素
             if(index % 2 == 0){
                 var zebracrossing = document.createAttribute("style");
+                // 添加元素节点不需要 createTextNode 
+                // 直接为 attr.nodeValue 赋值 string
                 zebracrossing.nodeValue = "background-color:gray;"
                 newtr.setAttributeNode(zebracrossing);
             }

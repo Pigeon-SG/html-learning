@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title>删除节点</title>
+
+    </head>
+    <body>
+        <!-- 删除节点 -->
+        <div id="parent_div">
+            一个父div
+            <div id="child_div">
+                即将被删除的div
+            </div>
+        </div>
+        <input type="button" value="删除子节点" onclick="removenode()"><br>
+        <!-- 删除属性 -->
+        <span id = "s"style="color: hotpink;">一个带有属性的span</span><br>
+        <button onclick="removeattr()">remove attribute in span</button><br>
+        <!-- replace node -->
+        <!-- 没有replace attri 直接利用js 修改css就行了 -->
+        <div id="d3_1">
+            替换节点 display
+            <div id="d3_2" style = "color: hotpink;">
+                第一个节点
+            </div>
+            <div id="d3_3" >
+                第er个节点
+            </div>
+            <div id="d3_4">
+                第san节点
+            </div>
+        </div>
+        <button onclick="replacenode()">replace er</button><br>
+        <button onclick="insertnode()">insert node in specific place</button>
+
+    </body>
+    <script>
+        function removenode(){
+            var p = document.getElementById("parent_div");
+            var c = document.getElementById("child_div");
+            p.removeChild(c);
+        }
+        function removeattr(){
+            var s = document.getElementById("s");
+            s.removeAttribute("style");
+        }
+        function replacenode(){
+            var d4 = document.createElement("div");
+            var d4_con = document.createTextNode("fourth node");
+            d4.appendChild(d4_con);
+
+            var d2 = document.getElementById("d3_3");
+            var p = document.getElementById("d3_1");
+            p.replaceChild(d4,d2);
+            
+            var d1 = document.getElementById("d3_2");
+            d1.style.fontFamily = "楷体";
+        }
+        function insertnode(){
+            var newnode = createnewnode("div","insert into 2 and 3");
+            var p = document.getElementById("d3_1");
+            p.insertBefore(newnode,document.getElementById("d3_4"));
+        }
+
+
+        function createnewnode(type,text){
+            var newnode = document.createElement(type);
+            var newnode_text = document.createTextNode(text);
+            newnode.appendChild(newnode_text);
+            return newnode;
+        }
+    </script>
+</html>
