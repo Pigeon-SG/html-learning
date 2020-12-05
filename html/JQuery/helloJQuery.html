@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>
+            hello JQuery!
+        </title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <!-- 显示与隐藏 -->
+        <button id = "b1">hidden div</button>
+        <button id = "b2">show div</button>
+        <div id="d">this is a div block</div>
+        <!-- 获取值 value -->
+        <button id = "button_getvalue">get value</button>
+        <input id = "input_getvalue" type="text" value = "default value"><br>
+        <br>
+        <!-- get html elements -->
+        <!-- 什么都会显示，包括 space and return -->
+        <button id = "button_gethtml">get html</button><br>
+        <div id = "div_gethtml">
+            content in div
+            <br>
+            <span>content in span</span>
+        </div>
+        
+    </body>
+    <script>
+        $(function(){
+            $("#b1").click(function(){
+                $("#d").hide();
+            });
+
+            $("#b2").click(function(){
+                $("#d").show();
+            })
+        });
+
+        $("#button_getvalue").click(function(){
+            var value = $("#input_getvalue").val("you dont know");
+            alert(value);
+        });
+
+        $("#button_gethtml").click(function(){
+            alert(
+                // 同样的 可以获得 text()
+                // 只不过不会包含标签 只包含了 文本元素
+                $("#div_gethtml").html("<span>hello world!</span>")
+            );
+        });
+        // $(function(){
+        //     document.write("load succeed!");
+        //     document.close();
+        // });
+
+
+    </script>
+
+</html>
