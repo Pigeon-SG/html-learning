@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <title>JQuery selectors</title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <button id = "button_visible">show the hidden</button>
+        <button id = "button_hidden">hidden the visible</button>
+        <br><br>
+        <div>hello jquery 1</div>
+        <div>hello jquery 2</div>
+        <div>hello jquery 3</div>
+        <div>hello jquery 4</div>
+    </body>
+    <script>
+        $("#button_visible").click(function(){
+            $("div:hidden").show();
+        });
+        $("#button_hidden").click(function(){
+            $("div:visible").hide();
+        });
+        
+    </script>
+</html>
