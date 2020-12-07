@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>JQuery events</title>
+        <script src = "js/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <div id="message"></div>
+        <button id="button_event">test click and double click</button>
+    </body>
+    <script>
+        $(function(){
+            $("#button_event").click(function(){
+                $("#message").text("click mouse");
+            });
+            $("#button_event").dblclick(function(){
+                $("#message").html("double click mouse");
+            });
+        });
+
+    </script>
+</html>

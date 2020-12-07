@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <title></title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <style>
+            tr#action div{
+                height: 50px;
+                background-color: red;
+            }
+            tr#value div,tr#key div{
+                height: 50px;
+                background-color: #d1d1d1;
+            }
+            td{
+                width: 25%;
+            }
+        </style>
+    </head>
+
+    <body>
+        输入框：<input type="text" id="i"><br>
+        <table width = "50%">
+            <tr>
+                <td></td>
+                <td>keydown</td>
+                <td>keypress</td>
+                <td>keyup</td>
+            </tr>
+            <tr id="action">
+                <td>行为</td>
+                <td><div id="keydownAction"></div></td>
+                <td><div id="keypressAction"></div></td>
+                <td><div id="keyupAction"></div></td>
+            </tr>
+            <tr id="key">
+                <td>按键</td>
+                <td><div id="keydownKey"></div></td>
+                <td><div id="keypressKey"></div></td>
+                <td><div id="keyupKey"></div></td>
+            </tr>
+            <tr id="value">
+                <td>取值</td>
+                <td><div id="keydownValue"></div></td>
+                <td><div id="keypressValue"></div></td>
+                <td><div id="keyupValue"></div></td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        var order = 0;
+        var timeout = null;
+        $(function(){
+            $("#i").keydown(function(event){
+                var selector = "keydown";
+                // 这个this 表示的是 #i 
+                show(selector,event,$(this).val());
+            });
+            $("#i").keypress(function(event){
+                var selector = "keypress";
+                show(selector,event,$(this).val());
+            });
+            $("#i").keyup(function(event){
+                var selector = "keyup";
+                show(selector,event,$(this).val());
+            });
+
+        });
+
+        function show(selector,e,inputvalue){
+            clearTimeout(timeout);
+            action(selector);
+            value(selector,inputvalue);
+            key(selector,e);
+            timeout = setTimeout(clear,2000);
+        }
+
+        function action(selector){
+            $(`#${selector}Action`).css("background-color","green");
+            $(`#${selector}Action`).html(`顺序:${++order}`);
+        }
+        function value(selector,value){
+            $(`#${selector}Value`).html(value);
+        }
+        function key(selector,event){
+            $(`#${selector}Key`).html(event.which);
+        }
+        function clear(){
+            order = 0;
+            $("tr#action div").css("background-color","red");
+            $("tr div").html("");
+        }
+    </script>
+
+</html>
