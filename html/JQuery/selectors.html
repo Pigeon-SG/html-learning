@@ -6,6 +6,8 @@
     <body>
         <button id = "button_visible">show the hidden</button>
         <button id = "button_hidden">hidden the visible</button>
+        <button id = "button_hidden_odd">hidden the odd</button>
+        <button id = "button_hidden_even">hidden the even</button>
         <br><br>
         <div>hello jquery 1</div>
         <div>hello jquery 2</div>
@@ -19,6 +21,11 @@
         $("#button_hidden").click(function(){
             $("div:visible").hide();
         });
-        
+        $("#button_hidden_odd").click(function(){
+            $("div:odd").hide();
+        });
+        $("#button_hidden_even").click(function(){
+            $("div:even").hide();
+        });
     </script>
 </html>

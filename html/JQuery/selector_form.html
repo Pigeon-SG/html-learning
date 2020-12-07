@@ -1,0 +1,102 @@
+<html>
+    <head>
+        <title>JQuery form object</title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+        <link rel="stylesheet" href="css/selector_form.css">
+    </head>
+    <body>
+        <table>
+            <!-- content in first line -->
+            <tr>
+                <td rowspan="13" valign = "middle" width = "150px">
+                    <div>
+                        <button class="b" value=":input">change:all input</button>
+                        <button class="b" value=":button">change:buttons</button>
+                        <button class="b" value=":radio">change:radioes</button>
+                        <button class="b" value=":checkboxes">change:checkboxes</button>
+                        <button class="b" value=":text">change:text</button>
+                        <button class="b" value=":password">change:password</button>
+                        <button class="b" value=":file">change:file</button>
+                        <button class="b" value=":submit">change:submit</button>
+                        <button class="b" value=":image">change:image</button>
+                        <button class="b" value=":reset">change:reset</button>
+                    </div>
+                </td>
+                <td width="120px">declare</td>
+                <td width="150px">form object</td>
+                <td width="">example</td>
+            </tr>
+            <tr>
+                <td>input button</td>
+                <td>:input</td>
+                <td><input type="button" value="input">
+                </td>
+                
+            </tr>
+            <tr>
+                <td>button</td>
+                <td>:button</td>
+                <td><button>button</button></td>
+            </tr>
+            <tr>
+                <td>single choose</td>
+                <td>:radio</td>
+                <td><input type="radio"></td>
+            </tr>
+            <tr>
+                <td>multi choose</td>
+                <td>:checkbox</td>
+                <td><input type="checkbox"></td>
+            </tr>
+            <tr>
+                <td>text</td>
+                <td>:text</td>
+                <td><input type="text"></td>
+            </tr>
+            <tr>
+                <td>textarea</td>
+                <td>:textarea</td>
+                <td><textarea></textarea></td>
+            </tr>
+            <tr>
+                <td>password</td>
+                <td>:password</td>
+                <td><input type="passord">
+                </td>
+            </tr>
+            <tr>
+                <td>load file</td>
+                <td>:file</td>
+                <td><input type="file"></td>
+            </tr>
+            <tr>
+                <td>submit button</td>
+                <td>:submit</td>
+                <td><input type="submit"></td>
+            </tr>
+            <tr>
+                <td>options</td>
+                <td></td>
+                <td><select><option>OPTION</option></select></td>
+            </tr>
+            <tr>
+                <td>image load</td>
+                <td>:image</td>
+                <td><input type="image" src="https://how2j.cn/example.gif"></td>
+            </tr>
+            <tr>
+                <td>reset button</td>
+                <td>:reset</td>
+                <td><input type="reset"></td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        $(function(){
+            $(".b").click(function(){
+                var value = $(this).val();
+                $(`td[rowspan!=13] ${value}`).toggle(200);
+            });
+        });
+    </script>
+</html>

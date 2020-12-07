@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title></title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+    </head>
+    <body>
+        <table>
+            <tr id="title">
+                <td>id</td>
+                <td>name</td>
+                <td>damage</td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>garren</td>
+                <td>70</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>zed</td>
+                <td>87</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>teemo</td>
+                <td>45</td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>teemo</td>
+                <td>45</td>
+            </tr>
+        </table>
+    </body>
+    <script>
+        $(function(){
+            $("table").css({"width":"50%",});
+            $("tr[id!=title]:even").css({"background-color":"gray"});
+            $("td").css({"width":"33%","display":"inline-block","border-bottom":"1px skyblue solid"});
+        });
+    </script>
+</html>

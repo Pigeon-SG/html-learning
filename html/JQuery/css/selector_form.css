@@ -1,0 +1,13 @@
+table{
+    border-collapse: collapse;
+    table-layout: fixed;
+    width: 80%;    
+}
+table td{
+    border-bottom: 1px solid skyblue;
+    padding-bottom:5px;
+    padding-top:5px;
+}
+div button{
+    display: block;
+}

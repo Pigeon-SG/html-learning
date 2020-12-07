@@ -1,0 +1,22 @@
+.pink{
+    background-color:pink;
+}
+.green{
+    background-color:green;
+ }
+.border{
+    border: 1px blue solid;
+     
+}
+.text{
+    color :red;
+}
+  
+button{
+    margin-top:10px;
+    display:block;
+}
+  
+div{
+   margin:10px;
+}
