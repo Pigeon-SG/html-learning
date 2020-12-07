@@ -1,0 +1,34 @@
+<html>
+    <head>
+        <title></title>
+        <script src="js/jquery-3.5.1.min.js"></script>
+    </head>
+
+
+    <body>
+        
+
+    </body>
+    <script>
+        var a = new Array(1,2,3);
+        // $.each 调用历遍(Array,recallfunction(para1,para2))
+        // 第一个参数是下标，第二个参数是内容
+        $.each(a,function(i,n){
+            document.write(`元素[${i}]:${n}<br>`);
+        })
+
+        var b = new Array(5,2,4,2,3,3,1,4,2,5);
+        // 在执行 $.unique(Array) 之前要调用 sort 函数进行排序
+        b.sort();
+        $.unique(b);
+        $.each(b,function(i,n){
+            document.write(`元素[${i}]:${n}<br>`);
+        })
+        // 检验是否存在
+        document.write($.inArray(2,a) + "<br>");
+
+
+        // 字符串操作
+        document.write($.trim("       hello,world    "));
+    </script>
+</html>
